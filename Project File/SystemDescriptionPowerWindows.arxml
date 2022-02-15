@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AUTOSAR xmlns="http://autosar.org/schema/r4.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/schema/r4.0 AUTOSAR_00050.xsd">
+  <AR-PACKAGES>
+    <AR-PACKAGE UUID="21dcac49-7439-4cda-86dd-a32a617c23ca">
+      <SHORT-NAME>ARRoot</SHORT-NAME>
+      <ELEMENTS>
+        <CAN-CLUSTER>
+          <SHORT-NAME>PowerWindowFrontLeftCanCluster</SHORT-NAME>
+          <CAN-CLUSTER-VARIANTS>
+            <CAN-CLUSTER-CONDITIONAL>
+              <PHYSICAL-CHANNELS>
+                <CAN-PHYSICAL-CHANNEL>
+                  <SHORT-NAME>PowerWindowFrontLeftCanPhysicalChannel</SHORT-NAME>
+                  <COMM-CONNECTORS>
+                    <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                      <COMMUNICATION-CONNECTOR-REF DEST="CAN-COMMUNICATION-CONNECTOR">/ARRoot/PowerWindowFrontLeftECUInstance/PowerWindowFrontLeftCanCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+                    </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                  </COMM-CONNECTORS>
+                </CAN-PHYSICAL-CHANNEL>
+              </PHYSICAL-CHANNELS>
+            </CAN-CLUSTER-CONDITIONAL>
+          </CAN-CLUSTER-VARIANTS>
+        </CAN-CLUSTER>
+        <ECU-INSTANCE>
+          <SHORT-NAME>PowerWindowFrontLeftECUInstance</SHORT-NAME>
+          <COMM-CONTROLLERS>
+            <CAN-COMMUNICATION-CONTROLLER>
+              <SHORT-NAME>PowerWindowFrontLeftCanCommunicationController</SHORT-NAME>
+            </CAN-COMMUNICATION-CONTROLLER>
+          </COMM-CONTROLLERS>
+          <CONNECTORS>
+            <CAN-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontLeftCanCommunicationConnector</SHORT-NAME>
+              <COMM-CONTROLLER-REF DEST="CAN-COMMUNICATION-CONTROLLER">/ARRoot/PowerWindowFrontLeftECUInstance/PowerWindowFrontLeftCanCommunicationController</COMM-CONTROLLER-REF>
+            </CAN-COMMUNICATION-CONNECTOR>
+          </CONNECTORS>
+        </ECU-INSTANCE>
+        <FLAT-MAP>
+          <SHORT-NAME>PowerWindowFrontLeftFlatMap</SHORT-NAME>
+          <INSTANCES>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="SYSTEM">/ARRoot/PowerWindowFrontLeftSystem</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowFrontLeftSystem/PowerWindowFrontLeftRootSwComposition</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlFrontRight</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+          </INSTANCES>
+        </FLAT-MAP>
+        <SYSTEM>
+          <SHORT-NAME>PowerWindowFrontLeftSystem</SHORT-NAME>
+          <MAPPINGS>
+            <SYSTEM-MAPPING>
+              <SHORT-NAME>PowerWindowFrontLeftSwMapping</SHORT-NAME>
+              <DATA-MAPPINGS>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+              </DATA-MAPPINGS>
+              <SW-IMPL-MAPPINGS>
+                <SWC-TO-IMPL-MAPPING>
+                  <SHORT-NAME>PowerWindowFrontLeftSwcToImplMapping</SHORT-NAME>
+                  <COMPONENT-IMPLEMENTATION-REF DEST="SWC-IMPLEMENTATION">/ARRoot/PowerWindowImpFile</COMPONENT-IMPLEMENTATION-REF>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowFrontLeftSystem/PowerWindowFrontLeftRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontLeftTopLevelComposition/PowerWindowsFrontLeftSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontLeftTopLevelComposition/PowerWindowsFrontLeftSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                </SWC-TO-IMPL-MAPPING>
+              </SW-IMPL-MAPPINGS>
+              <SW-MAPPINGS>
+                <SWC-TO-ECU-MAPPING>
+                  <SHORT-NAME>PowerWindowFrontLeftSwcToEcuMapping</SHORT-NAME>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowFrontLeftSystem/PowerWindowFrontLeftRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontLeftTopLevelComposition/PowerWindowsFrontLeftSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontLeftTopLevelComposition/PowerWindowsFrontLeftSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                  <ECU-INSTANCE-REF DEST="ECU-INSTANCE">/ARRoot/PowerWindowFrontLeftECUInstance</ECU-INSTANCE-REF>
+                </SWC-TO-ECU-MAPPING>
+              </SW-MAPPINGS>
+            </SYSTEM-MAPPING>
+          </MAPPINGS>
+          <ROOT-SOFTWARE-COMPOSITIONS>
+            <ROOT-SW-COMPOSITION-PROTOTYPE>
+              <SHORT-NAME>PowerWindowFrontLeftRootSwComposition</SHORT-NAME>
+              <FLAT-MAP-REF DEST="FLAT-MAP">/ARRoot/PowerWindowFrontLeftFlatMap</FLAT-MAP-REF>
+              <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowsFrontLeftTopLevelComposition</SOFTWARE-COMPOSITION-TREF>
+            </ROOT-SW-COMPOSITION-PROTOTYPE>
+          </ROOT-SOFTWARE-COMPOSITIONS>
+        </SYSTEM>
+        <CAN-CLUSTER>
+          <SHORT-NAME>PowerWindowFrontRightCanCluster</SHORT-NAME>
+          <CAN-CLUSTER-VARIANTS>
+            <CAN-CLUSTER-CONDITIONAL>
+              <PHYSICAL-CHANNELS>
+                <CAN-PHYSICAL-CHANNEL>
+                  <SHORT-NAME>PowerWindowFrontRightCanPhysicalChannel</SHORT-NAME>
+                  <COMM-CONNECTORS>
+                    <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                      <COMMUNICATION-CONNECTOR-REF DEST="CAN-COMMUNICATION-CONNECTOR">/ARRoot/PowerWindowFrontRightECUInstance/PowerWindowFrontRightCanCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+                    </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                  </COMM-CONNECTORS>
+                </CAN-PHYSICAL-CHANNEL>
+              </PHYSICAL-CHANNELS>
+            </CAN-CLUSTER-CONDITIONAL>
+          </CAN-CLUSTER-VARIANTS>
+        </CAN-CLUSTER>
+        <ECU-INSTANCE>
+          <SHORT-NAME>PowerWindowFrontRightECUInstance</SHORT-NAME>
+          <COMM-CONTROLLERS>
+            <CAN-COMMUNICATION-CONTROLLER>
+              <SHORT-NAME>PowerWindowFrontRightCanCommunicationController</SHORT-NAME>
+            </CAN-COMMUNICATION-CONTROLLER>
+          </COMM-CONTROLLERS>
+          <CONNECTORS>
+            <CAN-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontRightCanCommunicationConnector</SHORT-NAME>
+              <COMM-CONTROLLER-REF DEST="CAN-COMMUNICATION-CONTROLLER">/ARRoot/PowerWindowFrontRightECUInstance/PowerWindowFrontRightCanCommunicationController</COMM-CONTROLLER-REF>
+            </CAN-COMMUNICATION-CONNECTOR>
+          </CONNECTORS>
+        </ECU-INSTANCE>
+        <FLAT-MAP>
+          <SHORT-NAME>PowerWindowFrontRightFlatMap</SHORT-NAME>
+          <INSTANCES>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="SYSTEM">/ARRoot/PowerWindowFrontRightSystem</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowFrontRightSystem/PowerWindowFrontRightRootSwComposition</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlFrontRight</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+          </INSTANCES>
+        </FLAT-MAP>
+        <SYSTEM>
+          <SHORT-NAME>PowerWindowFrontRightSystem</SHORT-NAME>
+          <MAPPINGS>
+            <SYSTEM-MAPPING>
+              <SHORT-NAME>PowerWindowFrontRightSwMapping</SHORT-NAME>
+              <DATA-MAPPINGS>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+              </DATA-MAPPINGS>
+              <SW-IMPL-MAPPINGS>
+                <SWC-TO-IMPL-MAPPING>
+                  <SHORT-NAME>PowerWindowFrontRightSwcToImplMapping</SHORT-NAME>
+                  <COMPONENT-IMPLEMENTATION-REF DEST="SWC-IMPLEMENTATION">/ARRoot/PowerWindowImpFile</COMPONENT-IMPLEMENTATION-REF>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowFrontRightSystem/PowerWindowFrontRightRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontRightTopLevelComposition/PowerWindowsFrontRightSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontRightTopLevelComposition/PowerWindowsFrontRightSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                </SWC-TO-IMPL-MAPPING>
+              </SW-IMPL-MAPPINGS>
+              <SW-MAPPINGS>
+                <SWC-TO-ECU-MAPPING>
+                  <SHORT-NAME>PowerWindowFrontRightSwcToEcuMapping</SHORT-NAME>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowFrontRightSystem/PowerWindowFrontRightRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontRightTopLevelComposition/PowerWindowsFrontRightSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsFrontRightTopLevelComposition/PowerWindowsFrontRightSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                  <ECU-INSTANCE-REF DEST="ECU-INSTANCE">/ARRoot/PowerWindowFrontRightECUInstance</ECU-INSTANCE-REF>
+                </SWC-TO-ECU-MAPPING>
+              </SW-MAPPINGS>
+            </SYSTEM-MAPPING>
+          </MAPPINGS>
+          <ROOT-SOFTWARE-COMPOSITIONS>
+            <ROOT-SW-COMPOSITION-PROTOTYPE>
+              <SHORT-NAME>PowerWindowFrontRightRootSwComposition</SHORT-NAME>
+              <FLAT-MAP-REF DEST="FLAT-MAP">/ARRoot/PowerWindowFrontRightFlatMap</FLAT-MAP-REF>
+              <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowsFrontRightTopLevelComposition</SOFTWARE-COMPOSITION-TREF>
+            </ROOT-SW-COMPOSITION-PROTOTYPE>
+          </ROOT-SOFTWARE-COMPOSITIONS>
+        </SYSTEM>
+        <CAN-CLUSTER>
+          <SHORT-NAME>PowerWindowRearLeftCanCluster</SHORT-NAME>
+          <CAN-CLUSTER-VARIANTS>
+            <CAN-CLUSTER-CONDITIONAL>
+              <PHYSICAL-CHANNELS>
+                <CAN-PHYSICAL-CHANNEL>
+                  <SHORT-NAME>PowerWindowRearLeftCanPhysicalChannel</SHORT-NAME>
+                  <COMM-CONNECTORS>
+                    <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                      <COMMUNICATION-CONNECTOR-REF DEST="CAN-COMMUNICATION-CONNECTOR">/ARRoot/PowerWindowRearLeftECUInstance/PowerWindowRearLeftCanCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+                    </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                  </COMM-CONNECTORS>
+                </CAN-PHYSICAL-CHANNEL>
+              </PHYSICAL-CHANNELS>
+            </CAN-CLUSTER-CONDITIONAL>
+          </CAN-CLUSTER-VARIANTS>
+        </CAN-CLUSTER>
+        <ECU-INSTANCE>
+          <SHORT-NAME>PowerWindowRearLeftECUInstance</SHORT-NAME>
+          <COMM-CONTROLLERS>
+            <CAN-COMMUNICATION-CONTROLLER UUID="">
+              <SHORT-NAME>PowerWindowRearLeftCanCommunicationController</SHORT-NAME>
+            </CAN-COMMUNICATION-CONTROLLER>
+          </COMM-CONTROLLERS>
+          <CONNECTORS>
+            <CAN-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearLeftCanCommunicationConnector</SHORT-NAME>
+              <COMM-CONTROLLER-REF DEST="CAN-COMMUNICATION-CONTROLLER">/ARRoot/PowerWindowRearLeftECUInstance/PowerWindowRearLeftCanCommunicationController</COMM-CONTROLLER-REF>
+            </CAN-COMMUNICATION-CONNECTOR>
+          </CONNECTORS>
+        </ECU-INSTANCE>
+        <FLAT-MAP>
+          <SHORT-NAME>PowerWindowRearLeftFlatMap</SHORT-NAME>
+          <INSTANCES>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="SYSTEM">/ARRoot/PowerWindowRearLeftSystem</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowRearLeftSystem/PowerWindowRearLeftRootSwComposition</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlRearRight</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+          </INSTANCES>
+        </FLAT-MAP>
+        <SYSTEM>
+          <SHORT-NAME>PowerWindowRearLeftSystem</SHORT-NAME>
+          <MAPPINGS>
+            <SYSTEM-MAPPING>
+              <SHORT-NAME>PowerWindowRearLeftSwMapping</SHORT-NAME>
+              <DATA-MAPPINGS>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+              </DATA-MAPPINGS>
+              <SW-IMPL-MAPPINGS>
+                <SWC-TO-IMPL-MAPPING>
+                  <SHORT-NAME>PowerWindowRearLeftSwcToImplMapping</SHORT-NAME>
+                  <COMPONENT-IMPLEMENTATION-REF DEST="SWC-IMPLEMENTATION">/ARRoot/PowerWindowImpFile</COMPONENT-IMPLEMENTATION-REF>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowRearLeftSystem/PowerWindowRearLeftRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearLeftTopLevelComposition/PowerWindowsRearLeftSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearLeftTopLevelComposition/PowerWindowsRearLeftSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                </SWC-TO-IMPL-MAPPING>
+              </SW-IMPL-MAPPINGS>
+              <SW-MAPPINGS>
+                <SWC-TO-ECU-MAPPING>
+                  <SHORT-NAME>PowerWindowRearLeftSwcToEcuMapping</SHORT-NAME>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowRearLeftSystem/PowerWindowRearLeftRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearLeftTopLevelComposition/PowerWindowsRearLeftSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearLeftTopLevelComposition/PowerWindowsRearLeftSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                  <ECU-INSTANCE-REF DEST="ECU-INSTANCE">/ARRoot/PowerWindowRearLeftECUInstance</ECU-INSTANCE-REF>
+                </SWC-TO-ECU-MAPPING>
+              </SW-MAPPINGS>
+            </SYSTEM-MAPPING>
+          </MAPPINGS>
+          <ROOT-SOFTWARE-COMPOSITIONS>
+            <ROOT-SW-COMPOSITION-PROTOTYPE>
+              <SHORT-NAME>PowerWindowRearLeftRootSwComposition</SHORT-NAME>
+              <FLAT-MAP-REF DEST="FLAT-MAP">/ARRoot/PowerWindowRearLeftFlatMap</FLAT-MAP-REF>
+              <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowsRearLeftTopLevelComposition</SOFTWARE-COMPOSITION-TREF>
+            </ROOT-SW-COMPOSITION-PROTOTYPE>
+          </ROOT-SOFTWARE-COMPOSITIONS>
+        </SYSTEM>
+        <CAN-CLUSTER>
+          <SHORT-NAME>PowerWindowRearRightCanCluster</SHORT-NAME>
+          <CAN-CLUSTER-VARIANTS>
+            <CAN-CLUSTER-CONDITIONAL>
+              <PHYSICAL-CHANNELS>
+                <CAN-PHYSICAL-CHANNEL>
+                  <SHORT-NAME>PowerWindowRearRightCanPhysicalChannel</SHORT-NAME>
+                  <COMM-CONNECTORS>
+                    <COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                      <COMMUNICATION-CONNECTOR-REF DEST="CAN-COMMUNICATION-CONNECTOR">/ARRoot/PowerWindowRearRightECUInstance/PowerWindowRearRightCanCommunicationConnector</COMMUNICATION-CONNECTOR-REF>
+                    </COMMUNICATION-CONNECTOR-REF-CONDITIONAL>
+                  </COMM-CONNECTORS>
+                </CAN-PHYSICAL-CHANNEL>
+              </PHYSICAL-CHANNELS>
+            </CAN-CLUSTER-CONDITIONAL>
+          </CAN-CLUSTER-VARIANTS>
+        </CAN-CLUSTER>
+        <ECU-INSTANCE>
+          <SHORT-NAME>PowerWindowRearRightECUInstance</SHORT-NAME>
+          <COMM-CONTROLLERS>
+            <CAN-COMMUNICATION-CONTROLLER UUID="">
+              <SHORT-NAME>PowerWindowRearRightCanCommunicationController</SHORT-NAME>
+            </CAN-COMMUNICATION-CONTROLLER>
+          </COMM-CONTROLLERS>
+          <CONNECTORS>
+            <CAN-COMMUNICATION-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearRightCanCommunicationConnector</SHORT-NAME>
+              <COMM-CONTROLLER-REF DEST="CAN-COMMUNICATION-CONTROLLER">/ARRoot/PowerWindowRearRightECUInstance/PowerWindowRearRightCanCommunicationController</COMM-CONTROLLER-REF>
+            </CAN-COMMUNICATION-CONNECTOR>
+          </CONNECTORS>
+        </ECU-INSTANCE>
+        <FLAT-MAP>
+          <SHORT-NAME>PowerWindowRearRightFlatMap</SHORT-NAME>
+          <INSTANCES>
+            <FLAT-INSTANCE-DESCRIPTOR>
+              <ECU-EXTRACT-REFERENCE-IREF>
+                <CONTEXT-ELEMENT-REF DEST="SYSTEM">/ARRoot/PowerWindowRearRightSystem</CONTEXT-ELEMENT-REF>
+                <CONTEXT-ELEMENT-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowRearRightSystem/PowerWindowRearRightRootSwComposition</CONTEXT-ELEMENT-REF>
+                <TARGET-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlRearRight</TARGET-REF>
+              </ECU-EXTRACT-REFERENCE-IREF>
+            </FLAT-INSTANCE-DESCRIPTOR>
+          </INSTANCES>
+        </FLAT-MAP>
+        <SYSTEM>
+          <SHORT-NAME>PowerWindowRearRightSystem</SHORT-NAME>
+          <MAPPINGS>
+            <SYSTEM-MAPPING>
+              <SHORT-NAME>PowerWindowRearRightSwMapping</SHORT-NAME>
+              <DATA-MAPPINGS>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>IN</COMMUNICATION-DIRECTION>
+                </CLIENT-SERVER-TO-SIGNAL-MAPPING>
+                <SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+                  <COMMUNICATION-DIRECTION>OUT</COMMUNICATION-DIRECTION>
+                </SENDER-RECEIVER-TO-SIGNAL-MAPPING>
+              </DATA-MAPPINGS>
+              <SW-IMPL-MAPPINGS>
+                <SWC-TO-IMPL-MAPPING>
+                  <SHORT-NAME>PowerWindowRearRightSwcToImplMapping</SHORT-NAME>
+                  <COMPONENT-IMPLEMENTATION-REF DEST="SWC-IMPLEMENTATION">/ARRoot/PowerWindowImpFile</COMPONENT-IMPLEMENTATION-REF>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowRearRightSystem/PowerWindowRearRightRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearRightTopLevelComposition/PowerWindowsRearRightSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearRightTopLevelComposition/PowerWindowsRearRightSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                </SWC-TO-IMPL-MAPPING>
+              </SW-IMPL-MAPPINGS>
+              <SW-MAPPINGS>
+                <SWC-TO-ECU-MAPPING>
+                  <SHORT-NAME>PowerWindowRearRightSwcToEcuMapping</SHORT-NAME>
+                  <COMPONENT-IREFS>
+                    <COMPONENT-IREF>
+                      <CONTEXT-COMPOSITION-REF DEST="ROOT-SW-COMPOSITION-PROTOTYPE">/ARRoot/PowerWindowRearRightSystem/PowerWindowRearRightRootSwComposition</CONTEXT-COMPOSITION-REF>
+                      <CONTEXT-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearRightTopLevelComposition/PowerWindowsRearRightSwComponentPrototype</CONTEXT-COMPONENT-REF>
+                      <TARGET-COMPONENT-REF DEST="SW-COMPONENT-PROTOTYPE">/ARRoot/PowerWindowsRearRightTopLevelComposition/PowerWindowsRearRightSwComponentPrototype</TARGET-COMPONENT-REF>
+                    </COMPONENT-IREF>
+                  </COMPONENT-IREFS>
+                  <ECU-INSTANCE-REF DEST="ECU-INSTANCE">/ARRoot/PowerWindowRearRightECUInstance</ECU-INSTANCE-REF>
+                </SWC-TO-ECU-MAPPING>
+              </SW-MAPPINGS>
+            </SYSTEM-MAPPING>
+          </MAPPINGS>
+          <ROOT-SOFTWARE-COMPOSITIONS>
+            <ROOT-SW-COMPOSITION-PROTOTYPE>
+              <SHORT-NAME>PowerWindowRearRightRootSwComposition</SHORT-NAME>
+              <FLAT-MAP-REF DEST="FLAT-MAP">/ARRoot/PowerWindowRearRightFlatMap</FLAT-MAP-REF>
+              <SOFTWARE-COMPOSITION-TREF DEST="COMPOSITION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowsRearRightTopLevelComposition</SOFTWARE-COMPOSITION-TREF>
+            </ROOT-SW-COMPOSITION-PROTOTYPE>
+          </ROOT-SOFTWARE-COMPOSITIONS>
+        </SYSTEM>
+        <COMPOSITION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>PowerWindowsFrontLeftTopLevelComposition</SHORT-NAME>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE>
+              <SHORT-NAME>PowerWindowsFrontLeftSwComponentPrototype</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowControllerType</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontLeftConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlFrontLeft</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontLeftConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/AntiPinchFrontLeft</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontLeftConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/WindowSwitchFrontLeft</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+        <COMPOSITION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>PowerWindowsFrontRightTopLevelComposition</SHORT-NAME>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE>
+              <SHORT-NAME>PowerWindowsFrontRightSwComponentPrototype</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowControllerType</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontRightConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlFrontRight</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontRightConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/AntiPinchFrontRight</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowFrontRightConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/WindowSwitchFrontRight</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+        <COMPOSITION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>PowerWindowsRearLeftTopLevelComposition</SHORT-NAME>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE>
+              <SHORT-NAME>PowerWindowsRearLeftSwComponentPrototype</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowControllerType</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearLeftConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlRearLeft</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearLeftConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/AntiPinchRearLeft</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearLeftConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/WindowSwitchRearLeft</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+        <COMPOSITION-SW-COMPONENT-TYPE>
+          <SHORT-NAME>PowerWindowsRearRightTopLevelComposition</SHORT-NAME>
+          <COMPONENTS>
+            <SW-COMPONENT-PROTOTYPE>
+              <SHORT-NAME>PowerWindowsRearRightSwComponentPrototype</SHORT-NAME>
+              <TYPE-TREF DEST="APPLICATION-SW-COMPONENT-TYPE">/ARRoot/PowerWindowControllerType</TYPE-TREF>
+            </SW-COMPONENT-PROTOTYPE>
+          </COMPONENTS>
+          <CONNECTORS>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearRightConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/MotorControlRearRight</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearRightConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="P-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/AntiPinchRearRight</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+            <DELEGATION-SW-CONNECTOR>
+              <SHORT-NAME>PowerWindowRearRightConnectorProto</SHORT-NAME>
+              <OUTER-PORT-REF DEST="R-PORT-PROTOTYPE">/ARRoot/PowerWindowControllerType/WindowSwitchRearRight</OUTER-PORT-REF>
+            </DELEGATION-SW-CONNECTOR>
+          </CONNECTORS>
+        </COMPOSITION-SW-COMPONENT-TYPE>
+      </ELEMENTS>
+    </AR-PACKAGE>
+  </AR-PACKAGES>
+</AUTOSAR>

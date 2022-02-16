@@ -22,3 +22,7 @@ This repo contains the required files for the project of Classic AUTOSAR Basic t
 
 ## UML DIAGRAM FOR POWER WINDOWS:
 ![Power Windows UML Diagram](https://user-images.githubusercontent.com/81633037/150675368-7610cc67-8a6f-41ec-869f-b7d79ef6ff44.png)
+
+## VFB DIAGRAM FOR POWER WINDOWS:
+![Power Windows UML Diagram V2](https://user-images.githubusercontent.com/81633037/154212453-0c56f625-17df-4d57-96f6-9653daab33b5.png)
+
